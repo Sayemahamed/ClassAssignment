@@ -18,7 +18,9 @@ public class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddDbContext<DatabaseContext>(options =>
         {
-            options.UseMySQL();
+            options.UseMySQL(
+                builder.Configuration.GetConnectionString("DefaultConnection")
+                );
         });
 
         var app = builder.Build();
