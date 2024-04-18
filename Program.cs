@@ -45,7 +45,7 @@ public class Program
 
         app.UseAuthorization();
         app.UseHsts();
-
+        app.UseCors();
         app.MapControllers();
 
         app.Run();
