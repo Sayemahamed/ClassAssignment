@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ClassAssignment.Entities;
 
-public class Students
+[PrimaryKey(nameof(StudentId))]
+public class Student
 {
-    [Key]
     string StudentId
     {
         get; set;
