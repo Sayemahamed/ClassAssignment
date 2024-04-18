@@ -22,6 +22,15 @@ public class Program
                 builder.Configuration.GetConnectionString("DefaultConnection")
                 );
         });
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(build =>
+            {
+                build.WithOrigins("*")
+                .WithHeaders("Authorization", "origin", "accept", "content-type")
+                .WithMethods("GET", "POST", "PUT", "DELETE");
+            });
+        });
 
         var app = builder.Build();
 
