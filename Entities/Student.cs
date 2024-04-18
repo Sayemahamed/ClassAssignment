@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ClassAssignment.Entities;
 
-[PrimaryKey(nameof(StudentId))]
 public class Student
 {
-    string StudentId
+    [Key]
+    [Required]
+    public string? StudentId
     {
         get; set;
-    } = null!;
+    }
     public string StudentName
     {
         get; set;

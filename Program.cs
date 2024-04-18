@@ -35,7 +35,7 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
+        app.UseHsts();
 
         app.MapControllers();
 

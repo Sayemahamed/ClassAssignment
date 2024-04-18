@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using ClassAssignment.DataBaseContext;
+using ClassAssignment.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ClassAssignment.DataBaseContext;
-using ClassAssignment.Entities;
 
 namespace ClassAssignment.Controllers
 {
