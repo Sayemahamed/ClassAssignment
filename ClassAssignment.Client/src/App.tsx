@@ -33,26 +33,7 @@ let App = () => {
   };
   return (
     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-      <Grid item xs={12}>
-        {students.map((item) => (
-          <div key={item.studentId}>
-            <Button>{item.studentName}</Button>
-            <Button>{item.studentPhone}</Button>
-            <Button>{item.studentEmail}</Button>
-            <Button>{item.department}</Button>
-            <Button>{item.semester}</Button>
-            <Button
-              variant="contained"
-              onClick={() => {
-                setUpdateId(item.studentId);
-                setStudent(item);
-              }}
-            >
-              Edit
-            </Button>
-          </div>
-        ))}
-      </Grid>
+
       <Grid item xs={12}>
         <TextField
           size="small"
@@ -118,6 +99,14 @@ let App = () => {
                 .post("api/Students", student)
                 .catch((error) => console.log(error));
               await getData();
+              setStudent({
+                department: "",
+                studentEmail: "",
+                studentId: "",
+                studentName: "",
+                studentPhone: "",
+                semester: 0,
+              });
             }}
           >
             Post Data
@@ -163,6 +152,27 @@ let App = () => {
         >
           Delete
         </Button>
+      </Grid>
+            <Grid item xs={12}>
+        {students.map((item) => (
+          <div key={item.studentId}>
+            <Button>{item.studentId}</Button>
+            <Button>{item.studentName}</Button>
+            <Button>{item.studentPhone}</Button>
+            <Button>{item.studentEmail}</Button>
+            <Button>{item.department}</Button>
+            <Button>{item.semester}</Button>
+            <Button
+              variant="contained"
+              onClick={() => {
+                setUpdateId(item.studentId);
+                setStudent(item);
+              }}
+            >
+              Edit
+            </Button>
+          </div>
+        ))}
       </Grid>
     </Grid>
   );
